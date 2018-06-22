@@ -8,7 +8,7 @@ app = Flask(__name__)
 def hello():
     apikey = env.get('password')
     hostname = env.get('HOSTNAME')
-    url = 'https://masterdnsx6zh27iw534mg.eastus.cloudapp.azure.com/api/v1/bk-pytest/pods'
+    url = 'https://masterdnsx6zh27iw534mg.eastus.cloudapp.azure.com/api/v1/namespaces'
     headers = {'Authorization': 'Bearer '+str(apikey)}
     resp = requests.get(url, headers=headers, verify=False)	
     return "<p>Hello World - from Crossvale on OCP Azure on {}!</p> <p> About me: {} </p>".format(hostname, str(resp.json()))
