@@ -10,7 +10,7 @@ def hello():
     url = 'https://masterdnsx6zh27iw534mg.eastus.cloudapp.azure.com/oapi/v1'
     headers = {'Authorization': 'Bearer '+str(apikey)}
     resp = requests.get(url, headers=headers, verify=False)	
-    return "- Hello World - from Crossvale on OCP Azure! \n " + resp.json()
+    return "- Hello World - from Crossvale on OCP Azure! \n " + str(resp.json())
 
 if __name__ == "__main__":
      app.run(host="0.0.0.0", debug=True, port=5000)
