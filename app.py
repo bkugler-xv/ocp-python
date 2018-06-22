@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-	apikey = env.get('password')
+    apikey = env.get('password')
     url = 'https://masterdnsx6zh27iw534mg.eastus.cloudapp.azure.com/oapi/v1'
     headers = {'Authorization': 'Bearer '+str(apikey)}
     resp = requests.get(url, headers=headers, verify=False)	
