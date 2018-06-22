@@ -8,10 +8,10 @@ app = Flask(__name__)
 def hello():
     apikey = env.get('password')
     hostname = env.get('HOSTNAME')
-    url = 'https://masterdnsx6zh27iw534mg.eastus.cloudapp.azure.com/apis/project.openshift.io/v1/projects/bk-pytest'
+    url = 'https://masterdnsx6zh27iw534mg.eastus.cloudapp.azure.com/api/v1/bk-pytest/pods'
     headers = {'Authorization': 'Bearer '+str(apikey)}
     resp = requests.get(url, headers=headers, verify=False)	
-    return "Hello World - from Crossvale on OCP Azure on {}! \n About me: {}".format(env.get(hostname), str(resp.json()))
+    return "<p>Hello World - from Crossvale on OCP Azure on {}!</p> <p> About me: {} </p>".format(hostname, str(resp.json()))
 
 if __name__ == "__main__":
      app.run(host="0.0.0.0", debug=True, port=5000)
