@@ -11,7 +11,7 @@ def hello():
     url = 'https://masterdnsx6zh27iw534mg.eastus.cloudapp.azure.com/api/v1/namespaces/bk-pytest/status?pretty=true'
     headers = {'Authorization': 'Bearer '+str(apikey)}
     resp = requests.get(url, headers=headers, verify=False)	
-    return "<p> Hello World - from Crossvale on OCP Azure on {}!</p> <p> About me: {} </p>".format(hostname, str(resp.json()))
+    return "<p><h2> Hello World - from Crossvale on OCP Azure on {}!</h2></p> <p><b> About me: {} </b></p>".format(hostname, str(resp.json()))
 
 if __name__ == "__main__":
      app.run(host="0.0.0.0", debug=True, port=5000)
